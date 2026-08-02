@@ -72,17 +72,20 @@ business-mindset/
 ├── LICENSE                           ← MIT.
 ├── CONTRIBUTING.md
 │
-├── references/
-│   ├── agents/
-│   │   ├── reality-check.md          ← Market data validation agent
-│   │   ├── adversary-prompt.md       ← Enforced adversary agent
-│   │   └── risk-manager.md           ← Kelly criterion & survival math veto gate
-│   ├── playbooks/
-│   │   └── validation-saas.md        ← 7-day SaaS validation sprint
-│   ├── validation/
-│   │   └── case-studies.md           ← Historical scored examples & base rates
-│   ├── frameworks/
-│   │   ├── lookback-validation.md    ← Base-rate checking protocol
-│   │   └── asymmetric-execution.md
-│   └── lens-index.md                 ← Progressive loading map
+    ├── references/
+    │   ├── agents/
+    │   │   ├── reality-check.md          ← Market data validation agent
+    │   │   ├── adversary-prompt.md       ← Enforced adversary agent
+    │   │   └── risk-manager.md           ← Kelly criterion & survival math veto gate
+    │   ├── playbooks/
+    │   │   └── validation-saas.md        ← 7-day SaaS validation sprint
+    │   ├── validation/
+    │   │   └── case-studies.md           ← Historical scored examples & base rates
+    │   ├── frameworks/
+    │   │   ├── lookback-validation.md    ← Base-rate checking protocol
+    │   │   ├── asymmetric-execution.md
+    │   │   ├── sell-before-mvp.md        ← Pre-sale & deposit validation protocol
+    │   │   └── vc-wisdom-playbook.md     ← YC, Sequoia, a16z startup principles
+    │   ├── business-classics-compendium.md ← 12 business & growth book summaries
+    │   └── lens-index.md                 ← Progressive loading map
 ```
