@@ -1,0 +1,17 @@
+# Local environment
+~/.local/state/opencode/
+*.jsonl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary research files (if any get committed accidentally)
+research/raw/

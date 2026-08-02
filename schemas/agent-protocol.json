@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Business Mindset Skill - Agent API Protocol",
+  "description": "Standardized JSON API protocol for programmatic querying of business-mindset skill by agent frameworks (OpenClaw, MCP clients, Moltask bots)",
+  "type": "object",
+  "required": ["request", "response"],
+  "properties": {
+    "request": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "title": "Opportunity Intake Request",
+            "$ref": "#/$defs/OpportunityRequest"
+          },
+          {
+            "title": "Lens Evaluation Request",
+            "$ref": "#/$defs/LensRequest"
+          },
+          {
+            "title": "Simulation Request",
+            "$ref": "#/$defs/SimulationRequest"
+          }
+        ]
+      }
+    },
+    "response": {
+      "title": "Cognitive Response",
+      "type": "object",
+      "properties": {
+        "analysis": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": ["PASS", "FLAG", "REJECT", "INSUFFICIENT_DATA"]
+            },
+            "asymmetry_score": {
+              "type": "number",
+              "description": "Systemic Edge = (C x R x S x O x A) / (1 + F), range 0-32"
+            },
+            "pillars": {
+              "type": "object",
+              "properties": {
+                "convexity": { "type": "integer", "enum": [0, 1, 2] },
+                "reflexivity": { "type": "integer", "enum": [0, 1, 2] },
+                "structural_edge": { "type": "integer", "enum": [0, 1, 2] },
+                "optionality": { "type": "integer", "enum": [0, 1, 2] },
+                "asymmetry": { "type": "integer", "enum": [0, 1, 2] },
+                "friction": { "type": "integer", "enum": [0, 1, 2] }
+              }
+            },
+            "knightian_uncertainty": {
+              "type": "string",
+              "enum": ["known", "risk", "knightian"]
+            }
+          }
+        },
+        "simulation": {
+          "type": "object",
+          "properties": {
+            "monte_carlo_score": { "type": "number" },
+            "survival_probability_24m": { "type": "number" },
+            "brier_score": { "type": "number" }
+          }
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "title": "Execution Artifact",
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": ["mvp_json", "unit_economics_csv", "gtm_plan", "decision_journal", "launch_checklist"]
+              },
+              "content": { "type": "string" }
+            }
+          }
+        },
+        "next_actions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "OpportunityRequest": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "opportunity_intake" },
+        "opportunity_description": { "type": "string" },
+        "capital_available": { "type": "number" },
+        "personal_leverage": { "type": "number", "minimum": 0, "maximum": 10 },
+        "risk_tolerance": { "type": "string", "enum": ["low", "medium", "high"] },
+        "industry_expertise_years": { "type": "number" },
+        "deployment_speed_days": { "type": "number" }
+      },
+      "required": ["type", "opportunity_description"]
+    },
+    "LensRequest": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "lens_evaluation" },
+        "lens_name": { "type": "string" },
+        "context": { "type": "string" }
+      },
+      "required": ["type", "lens_name"]
+    },
+    "SimulationRequest": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "simulation" },
+        "simulation_type": { "type": "string", "enum": ["market_dynamics", "monte_carlo", "adversarial"] },
+        "opportunity_data": { "type": "object" }
+      },
+      "required": ["type", "simulation_type"]
+    }
+  }
+}
