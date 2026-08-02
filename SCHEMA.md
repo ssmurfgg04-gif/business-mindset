@@ -17,71 +17,53 @@ business-mindset/
 ├── LICENSE                           ← MIT.
 ├── CONTRIBUTING.md
 │
-├── references/
-│   ├── research-protocols.md         ← Search strategies + failure-case search
-│   ├── real-world-verification.md    ← MANDATORY: actual GitHub/web searches before PASS
-│   ├── subagent-prompts.md           ← 6 sub-agent dispatch templates
-│   ├── intake.md                     ← Optional user intake
-│   ├── ledger.md                     ← Generalized position tracking
-│   ├── exponential-research.md       ← Source research for Lens 07
-│   ├── asymmetry-scorecard.md
-│   ├── execution-sprints.md
-│   ├── decision-journal.md
-│   ├── calibration-protocol.md
-│   ├── adversarial-audit.md
-│   ├── business-fundamentals.md
-│   ├── growth-playbook.md
-│   ├── anti-patterns-compendium.md
-│   ├── cognitive-biases-catalog.md
-│   ├── research-opportunity-identification.md
-│   ├── research-business-operations.md
-│   ├── research-operator-wisdom.md
-│   ├── research-pricing-competitor.md
-│   ├── profit-engineering.md         ← Monetization checklist + unit economics stress test
-│   ├── pipeline-checklist.md         ← 11-phase, 60+ step mandatory execution checklist
-│   ├── skill-health-diagnostic.md    ← 7-metric self-diagnostic
-│   ├── reddit-mining-protocol.md     ← MANDATORY demand-side verification
-│   ├── customer-interview-protocol.md ← MANDATORY Mom Test verification
-│   ├── god-of-business-gap-analysis.md ← Operator composite comparison
-│   │
-│   ├── lenses/
-│   │   ├── 01-signal-scan.md
-│   │   ├── 02-demand-gap.md
-│   │   ├── 03-arbitrage-pattern.md
-│   │   ├── 04-leverage-map.md
-│   │   ├── 05-network-path.md
-│   │   ├── 06-anti-bias-audit.md     ← Includes real-world verification
-│   │   ├── 07-exponential-potential.md
-│   │   ├── 08-risk-of-ruin.md
-│   │   ├── 09-pricing-power.md
-│   │   ├── 10-competitor-teardown.md
-│   │   ├── 11-opportunity-sifting.md
-│   │   ├── 12-business-operations.md
-│   │   ├── 13-growth-scaling.md
-│   │   ├── 14-negotiation-sales.md
-│   │   ├── 15-capital-allocation.md
-│   │   ├── 16-distribution-engineering.md ← #1 determinant for solo operators
-│   │   ├── 17-intuition.md           ← Expert vs amateur intuition
-│   │   └── 18-market-consensus.md    ← Contrarian positioning
-│   │
-│   ├── mindsets/                     ← Top 1% psychology & execution discipline
-│   │   ├── top-1-percent-psychology.md    ← Identity, fear, ego, energy, empathy
-│   │   ├── elite-cognitive-weapons.md     ← Probabilistic thinking, Bayesian updating, inversion, ego kill switch
-│   │   └── compounding-discipline.md      ← Systems, deep work, delayed gratification, sunk-cost immunity
-│   │
-│   ├── frameworks/
-│   │   ├── fang-yuan-mindset.md
-│   │   ├── operator-personas.md
-│   │   ├── operator-wisdom.md
-│   │   ├── mental-models.md
-│   │   ├── ecr-model.md
-│   │   ├── effectuation.md
-│   │   ├── asymmetric-execution.md
-│   │   ├── remix-cognitive-lifecycle.md
-│   │   ├── tri-persona-debate.md     ← Munger/Musk/Thiel adversarial collision
-│   │   ├── gtm-activation.md         ← 4-phase Go-To-Market activation
-│   │   ├── money-making-mastery.md   ← Money equation, 5 search paths, pricing power
-│   │   └── sales-and-negotiation-mastery.md ← Money-capture layer: sales psychology, objection engineering, closing
+    ├── references/
+    │   ├── research-protocols.md         ← Search strategies + failure-case search
+    │   ├── real-world-verification.md    ← MANDATORY: actual GitHub/web searches before PASS
+    │   ├── subagent-prompts.md           ← 6 sub-agent dispatch templates
+    │   ├── intake.md                     ← Optional user intake
+    │   ├── ledger.md                     ← Generalized position tracking
+    │   ├── exponential-research.md       ← Source research for Lens 07
+    │   ├── asymmetry-scorecard.md
+    │   ├── execution-sprints.md
+    │   ├── decision-journal.md
+    │   ├── calibration-protocol.md
+    │   ├── adversarial-audit.md
+    │   ├── business-fundamentals.md
+    │   ├── growth-playbook.md
+    │   ├── anti-patterns-compendium.md
+    │   ├── cognitive-biases-catalog.md
+    │   ├── research-opportunity-identification.md
+    │   ├── research-business-operations.md
+    │   ├── research-operator-wisdom.md
+    │   ├── research-pricing-competitor.md
+    │   ├── profit-engineering.md         ← Monetization checklist + unit economics stress test
+    │   ├── pipeline-checklist.md         ← 11-phase, 60+ step mandatory execution checklist
+    │   ├── skill-health-diagnostic.md    ← 7-metric self-diagnostic
+    │   ├── reddit-mining-protocol.md     ← MANDATORY demand-side verification
+    │   ├── customer-interview-protocol.md ← MANDATORY Mom Test verification
+    │   ├── god-of-business-gap-analysis.md ← Operator composite comparison
+    │   │
+    │   ├── agents/
+    │   │   └── reality-check.md          ← Market data validation agent
+    │   │
+    │   ├── validation/
+    │   │   └── case-studies.md           ← Historical scored examples & base rates
+    │   │
+    │   ├── frameworks/
+    │   │   ├── fang-yuan-mindset.md
+    │   │   ├── operator-personas.md
+    │   │   ├── operator-wisdom.md
+    │   │   ├── mental-models.md
+    │   │   ├── ecr-model.md
+    │   │   ├── effectuation.md
+    │   │   ├── asymmetric-execution.md
+    │   │   ├── remix-cognitive-lifecycle.md
+    │   │   ├── tri-persona-debate.md     ← Munger/Musk/Thiel adversarial collision
+    │   │   ├── gtm-activation.md         ← 4-phase Go-To-Market activation
+    │   │   ├── money-making-mastery.md   ← Money equation, 5 search paths, pricing power
+    │   │   ├── sales-and-negotiation-mastery.md ← Money-capture layer: sales psychology, objection engineering, closing
+    │   │   └── lookback-validation.md    ← Base-rate checking protocol
 │   │
 │   └── domains/
 │       ├── tech-saas-playbook.md
