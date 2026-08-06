@@ -360,3 +360,49 @@ When executing research protocols, prioritize these programmatic Model Context P
 2. **GitHub MCP (`gh_grep`, repo search):** For scanning open-source developer tooling demand, open issues, and fast-growing libraries.
 3. **Reddit MCP / Exa Search:** For extracting unvarnished customer complaints, "I wish someone made" threads, and consumer sentiment gaps.
 4. **SQLite / Knowledge Graph MCP:** For caching and structuring multi-lens research findings across iterative sessions.
+
+---
+
+## Real-Time Horizon Trends (Unthrottled RSS) — Live Market Signals
+
+For tracking **daily/current search spikes** or what a country is searching right now, skip paid
+APIs entirely. Google Trends serves real-time trends over an unthrottled RSS/XML endpoint:
+
+- Base URL: `https://trends.google.com/trending/rss?geo=<CODE>` — `<CODE>` is any ISO-3166-1
+  country code, e.g. KE, NG, GB, IN, CN, US, BR, ZA.
+- Parse `<item><title>` for the trending term; the optional `<ht:approx_traffic>` holds the
+  search-volume band (e.g. `100k+`).
+
+Practical pattern for the skill: pull the feed for (a) the user's country and (b) 2-3 **ahead
+countries**, then diff them (see Cross-Country Horizon below).
+
+For **historical interest-over-time** (month-to-week curves on specific keywords), use `pytrends`
+if Python is available. On HTTP 429 rate-limits: rotate free proxies, or fall back to a real-time
+RSS feed (no limits).
+
+## Cross-Country Horizon Method — "Where Is This Country Going?"
+
+The most reliable forecasting cheat: **history repeats in other countries' future shape**. To
+forecast where the user's country will be in T years, find the country that, T years ago, looked
+like today's country — its pathway is a strong prior for the user's.
+
+1. For each candidate predictor country P against user country U, compare current-time U with P's
+   snapshots 5/10/15/20 years ago on: mobile & internet penetration, mobile-money/digital-payment
+   adoption, broadband & data costs, urban vs rural split, fintech/startup density, cybersecurity
+   maturity, and the age/ferocity of data-protection or privacy-law enforcement.
+2. Pick the predictor with the **tightest adoption-stack match**, not the closest name. (A
+   mobile-money leader such as Kenya/"M-Pesa" maps best to a country that was at the same parity
+   earlier — e.g. China, India or South Africa — matched on regulatory & enforcement *age*.)
+3. Treat that predictor's previous N years as the user's next N, keyed to time:
+   - Its cybersecurity/MSSP market growth → user-country forecast, T-years lagged.
+   - Its data-protection enforcement ramp → the user's likely, T-years behind.
+   - Its SME cloud-migration + managed-SOC / vCISO demand bending up → expect the same here.
+4. **Refine the horizon with live feeds, not only history**: probe the RSS trend feed
+   (see above) across user-country = "now", ahead-country (e.g. NG/ZA/IN/CN) = "next chapter",
+   far-market (US/EU) = "shelf". A term that spiked early in an ahead-country and is now rising in
+   the user-country flags the incoming wave.
+
+**Precaution:** this yields **trajectory priors**, not certainty. Label each projection with its
+confidence and the parity-gap assumption behind it; state what could break the parallel (policy
+shock, currency event, election pivot). Blend the user's own lived history ("country was like X a
+few decades ago") with the quantitative snapshots.

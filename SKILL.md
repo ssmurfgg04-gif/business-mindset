@@ -34,15 +34,16 @@ $$\text{Systemic Edge} = \frac{C \times R \times S \times O \times A}{1 + F}$$
 Do not load all files at once. Match mode to intent and load companion files on demand:
 - **Quick Check**: 2-minute gut check (`references/lenses/06-anti-bias-audit.md` only).
 - **Standard**: Full opportunity brief (`references/agents/reality-check.md`, relevant lenses from `references/lenses/`, asymmetric execution scoring, adversarial pass).
-- **Deep Dive**: Complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), and lookback validation (`references/frameworks/lookback-validation.md`).
+- **Deep Dive**: Complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), lookback validation (`references/frameworks/lookback-validation.md`), and merchant cash/velocity discipline (`references/frameworks/merchant-wisdom.md`).
 
 ## Mandatory Protocols Before PASS Verdict
 1. **Reality-Check Agent** (`references/agents/reality-check.md`): Validate market assumptions against current market data/saturation.
 2. **Disconfirming Evidence**: Run 5 failure-case queries (`references/research-protocols.md`).
 3. **Adversarial Audit** (`references/adversarial-audit.md`): Red-team pass to kill the idea.
-4. **Lookback Validation** (`references/frameworks/lookback-validation.md`): Check base rates of success.
-5. **Single Next Action**: Provide ONE physical action (<2 hours) that tests the riskiest assumption.
-6. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
+4. **Merchant Gate** (`references/frameworks/merchant-wisdom.md`): Run the Merchant Decision Template — if the buy/sell spread is not positive after all costs, the idea fails regardless of scale.
+5. **Lookback Validation** (`references/frameworks/lookback-validation.md`): Check base rates of success.
+6. **Single Next Action**: Provide ONE physical action (<2 hours) that tests the riskiest assumption.
+7. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
 
 ## Token Efficiency & Output Discipline
 - Avoid verbose walls of conversational text. Output structured markdown briefs and JSON records.
