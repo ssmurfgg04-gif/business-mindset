@@ -34,7 +34,7 @@ $$\text{Systemic Edge} = \frac{C \times R \times S \times O \times A}{1 + F}$$
 Do not load all files at once. Match mode to intent and load companion files on demand:
 - **Quick Check**: 2-minute gut check (`references/lenses/06-anti-bias-audit.md` only).
 - **Standard**: Full opportunity brief (`references/agents/reality-check.md`, relevant lenses from `references/lenses/`, asymmetric execution scoring, adversarial pass).
-- **Deep Dive**: Complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), lookback validation (`references/frameworks/lookback-validation.md`), and merchant cash/velocity discipline (`references/frameworks/merchant-wisdom.md`).
+- **Deep Dive**: Complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), lookback validation (`references/frameworks/lookback-validation.md`), merchant cash/velocity discipline (`references/frameworks/merchant-wisdom.md`), and marketing/narrative persuasion (`references/frameworks/marketing-wisdom.md`).
 
 ## Mandatory Protocols Before PASS Verdict
 1. **Reality-Check Agent** (`references/agents/reality-check.md`): Validate market assumptions against current market data/saturation.
@@ -43,7 +43,8 @@ Do not load all files at once. Match mode to intent and load companion files on 
 4. **Merchant Gate** (`references/frameworks/merchant-wisdom.md`): Run the Merchant Decision Template — if the buy/sell spread is not positive after all costs, the idea fails regardless of scale.
 5. **Lookback Validation** (`references/frameworks/lookback-validation.md`): Check base rates of success.
 6. **Single Next Action**: Provide ONE physical action (<2 hours) that tests the riskiest assumption.
-7. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
+7. **Messaging Hook** (`references/frameworks/marketing-wisdom.md`, optional for Standard, expected for Deep Dive): state the open loop, the raw visual to open on, the single emotional value, and the product-as-story angle.
+8. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
 
 ## Token Efficiency & Output Discipline
 - Avoid verbose walls of conversational text. Output structured markdown briefs and JSON records.
