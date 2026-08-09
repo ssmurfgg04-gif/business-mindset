@@ -33,18 +33,20 @@ $$\text{Systemic Edge} = \frac{C \times R \times S \times O \times A}{1 + F}$$
 ## Progressive Loading & Operating Modes
 Do not load all files at once. Match mode to intent and load companion files on demand:
 - **Quick Check**: 2-minute gut check (`references/lenses/06-anti-bias-audit.md` only).
-- **Standard**: Full opportunity brief (`references/agents/reality-check.md`, relevant lenses from `references/lenses/`, asymmetric execution scoring, adversarial pass).
-- **Deep Dive**: Complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), lookback validation (`references/frameworks/lookback-validation.md`), merchant cash/velocity discipline (`references/frameworks/merchant-wisdom.md`), and marketing/narrative persuasion (`references/frameworks/marketing-wisdom.md`).
+- **Standard**: Novelty & Clustering Gate (`references/frameworks/novelty-gate.md`), full opportunity brief (`references/agents/reality-check.md`, relevant lenses from `references/lenses/`, asymmetric execution scoring, adversarial pass).
+- **Deep Dive**: Novelty & Clustering Gate (`references/frameworks/novelty-gate.md`), complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), lookback validation (`references/frameworks/lookback-validation.md`), merchant cash/velocity discipline (`references/frameworks/merchant-wisdom.md`), and marketing/narrative persuasion (`references/frameworks/marketing-wisdom.md`).
 
 ## Mandatory Protocols Before PASS Verdict
+0. **Novelty & Clustering Gate** (`references/frameworks/novelty-gate.md`): Veto check that runs BEFORE scoring on any candidate that reached a flattering early verdict. Distinguishes NOVEL from CLUSTERED/ECHO (hype-cluster categories such as the agent economy, vertical AI, compliance SaaS). Only a NOVEL verdict may pass this gate. State the gate result in the brief header as `Novelty Gate: NOVEL / CLUSTERED / ECHO`. **If CLUSTERED or ECHO, the opportunity may not be recommended as "genuinely novel."**
 1. **Reality-Check Agent** (`references/agents/reality-check.md`): Validate market assumptions against current market data/saturation.
 2. **Disconfirming Evidence**: Run 5 failure-case queries (`references/research-protocols.md`).
 3. **Adversarial Audit** (`references/adversarial-audit.md`): Red-team pass to kill the idea.
 4. **Merchant Gate** (`references/frameworks/merchant-wisdom.md`): Run the Merchant Decision Template — if the buy/sell spread is not positive after all costs, the idea fails regardless of scale.
 5. **Lookback Validation** (`references/frameworks/lookback-validation.md`): Check base rates of success.
-6. **Single Next Action**: Provide ONE physical action (<2 hours) that tests the riskiest assumption.
-7. **Messaging Hook** (`references/frameworks/marketing-wisdom.md`, optional for Standard, expected for Deep Dive): state the open loop, the raw visual to open on, the single emotional value, and the product-as-story angle.
-8. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
+6. **Verdict-Consistency Law** (`references/frameworks/novelty-gate.md`): the final verdict must agree with the lowest flow/threading gate. If pillar score <8, base rate <15%, or a novelty veto fired — no Tier 1 / Moonshot / PASS language is allowed; default to the lower tier when in doubt. Never output confidence > 35% without calibration evidence. A "Tier 1 Moonshot" next to a 4/32 pillar score is verdict leakage and must be corrected.
+7. **Single Next Action**: Provide ONE physical next step (<2 hours) that tests the riskiest assumption.
+8. **Messaging Hook** (`references/frameworks/marketing-wisdom.md`, optional for Standard, expected for Deep Dive): state the open loop, the raw visual to open on, the single emotional value, and the product-as-story angle.
+9. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
 
 ## Token Efficiency & Output Discipline
 - Avoid verbose walls of conversational text. Output structured markdown briefs and JSON records.
