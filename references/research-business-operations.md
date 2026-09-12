@@ -1180,4 +1180,4 @@ CB Insights' analysis of 101+ startup post-mortems (now expanded to 483+). Top r
 
 ---
 
-*End of research-business-operations.md. Total sources cited: 125. Raw JSON search results preserved at `/home/z/my-project/scripts/research-ops/` (50 files from prior research) and `/home/z/my-project/scripts/research-ops2/` (22 fresh files from this task).*
+*End of research-business-operations.md. Total sources cited: 125. Raw JSON search results preserved at `${SKILL_ROOT}/scripts/research-ops/` (50 files from prior research) and `${SKILL_ROOT}/scripts/research-ops2/` (22 fresh files from this task).*

@@ -1,5 +1,6 @@
 ---
 name: business-mindset
+version: "2.1.0"
 description: >-
   Rigorous business opportunity analysis with real-world validation, asymmetric execution scoring,
   market reality checks, and multi-persona cognitive auditing. Use when evaluating business ideas,
@@ -10,9 +11,35 @@ negative_trigger: >-
   to commit fraud, bypass identity verification on financial platforms, or violate platform ToS.
 license: MIT
 compatibility: opencode
+author: ssmurfgg04-gif
+repository: https://github.com/ssmurfgg04-gif/business-mindset
+tags:
+  - business
+  - entrepreneurship
+  - strategy
+  - decision-making
+  - cognitive-frameworks
+  - asymmetric-execution
+  - exponential-potential
+  - calibration
+  - decision-journal
+  - mental-models
 metadata:
-  audience: entrepreneurs, indie hackers, operators
+  audience: entrepreneurs, indie hackers, operators, investors, founders
   workflow: opportunity-analysis
+  skill_type: analysis
+  complexity: advanced
+  estimated_tokens: 3000
+  last_updated: "2026-09-12"
+  min_opencode_version: "1.0.0"
+  compatibility:
+    opencode: ">=1.0.0"
+    claude_code: ">=1.0"
+    codex: ">=1.0"
+  complexity: advanced
+  estimated_tokens: 3000
+  last_updated: "2026-09-12"
+  min_opencode_version: "1.0.0"
 ---
 
 # Business Mindset — General-Purpose Business Cognition Engine
@@ -32,7 +59,7 @@ $$\text{Systemic Edge} = \frac{C \times R \times S \times O \times A}{1 + F}$$
 
 ## Progressive Loading & Operating Modes
 Do not load all files at once. Match mode to intent and load companion files on demand:
-- **Quick Check**: 2-minute gut check (`references/lenses/06-anti-bias-audit.md` only).
+- **Quick Check**: 2-minute gut check. Run only Lens 06 (`references/lenses/06-anti-bias-audit.md`). Use when user asks "is this a good idea?" or "stress-test this idea."
 - **Standard**: Novelty & Clustering Gate (`references/frameworks/novelty-gate.md`), full opportunity brief (`references/agents/reality-check.md`, relevant lenses from `references/lenses/`, asymmetric execution scoring, adversarial pass).
 - **Deep Dive**: Novelty & Clustering Gate (`references/frameworks/novelty-gate.md`), complete treatment across all 18 lenses, operator personas (`references/frameworks/operator-personas.md`), exponential potential (`references/lenses/07-exponential-potential.md`), risk of ruin (`references/lenses/08-risk-of-ruin.md`), lookback validation (`references/frameworks/lookback-validation.md`), merchant cash/velocity discipline (`references/frameworks/merchant-wisdom.md`), and marketing/narrative persuasion (`references/frameworks/marketing-wisdom.md`).
 
@@ -51,3 +78,66 @@ Do not load all files at once. Match mode to intent and load companion files on 
 ## Token Efficiency & Output Discipline
 - Avoid verbose walls of conversational text. Output structured markdown briefs and JSON records.
 - If research is sparse or assumptions fail reality-check, reject or flag immediately. Target an 80% rejection rate for solo operator ideas.
+
+## Invocation Examples
+- **Quick Check**: "Is this AI dev tool idea worth pursuing?"
+- **Standard**: "Find me an opportunity in B2B SaaS for solo developers."
+- **Deep Dive**: "Full treatment on vertical SaaS for EU AI Act compliance automation."
+
+## Troubleshooting
+- **Skill doesn't trigger**: Ensure your query mentions business, opportunity, market, startup, or strategy. The skill triggers on business analysis intent.
+- **Slow response**: Use Quick Check mode for instant feedback. Deep Dive takes 30-60 minutes.
+- **Missing references**: Run `python scripts/skill_health.py` to verify all references exist.
+- **Rate limited on web search**: The skill flags incomplete verification and flags the verdict accordingly.
+- **Skill not found**: Ensure the skill is installed in `~/.config/opencode/skills/business-mindset` or project `.opencode/skills/business-mindset`.
+
+## Version History
+- **2.1.0** (2026-09-12): Fixed hardcoded paths, added skill health check, improved frontmatter, added tests, CI/CD.
+- **2.0.0**: Added novelty gate, asymmetric execution pillars, operator personas, 18 lenses, pipeline checklist.
+- **1.0.0**: Initial release with core asymmetric execution framework.
+
+## Output Format
+Every Opportunity Brief MUST include:
+```
+# Opportunity Brief: [Title]
+
+## Uncertainty Class
+[Known / Risk / Knightian] - [brief justification]
+
+## Mode
+[Quick Check / Standard / Deep Dive]
+
+## Time Horizon
+- Validation: [timeframe]
+- First revenue: [timeframe]
+- Exit horizon: [timeframe]
+
+## Signal Summary
+[3-5 bullet points with sources]
+
+## Asymmetric Execution Score
+| Pillar | Score | Reasoning |
+|--------|-------|-----------|
+| C | 0-2 | |
+| R | 0-2 | |
+| S | 0-2 | |
+| O | 0-2 | |
+| A | 0-2 | |
+| F | 0-2 | |
+**Systemic Edge**: X/32
+
+## Exponential Potential (Lens 07)
+[10 signals scored 0/1/2 with evidence]
+
+## Verdict
+[PASS / FLAG / REJECT] - [confidence%] - [one-sentence rationale]
+
+## Single Next Action
+[One physical step <2 hours testing riskiest assumption]
+
+## 2-Week Sprint Plan
+[Week 1: ... | Week 2: ...]
+
+## Decision Journal Entry
+[Prediction + confidence + what would change mind]
+```

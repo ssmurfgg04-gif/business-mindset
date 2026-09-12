@@ -1,14 +1,14 @@
-# Sub-Agent Prompts — Copy-Pasteable Research Dispatch Templates
+﻿# Sub-Agent Prompts â€” Copy-Pasteable Research Dispatch Templates
 
 Use these prompts verbatim when dispatching sub-agents via the Task tool.
 Each sub-agent should receive ONLY its specific prompt and the lens excerpt
-relevant to its task — never the full skill. Sub-agents do not have access
+relevant to its task â€” never the full skill. Sub-agents do not have access
 to conversation context.
 
 All sub-agents should be told:
 1. Their Task ID (e.g., "2-a", "2-b")
-2. To read `/home/z/my-project/worklog.md` before starting (if it exists)
-3. To append their work record to `/home/z/my-project/worklog.md` after finishing
+2. To read `${SKILL_ROOT}/worklog.md` before starting (if it exists)
+3. To append their work record to `${SKILL_ROOT}/worklog.md` after finishing
 
 ---
 
@@ -22,12 +22,12 @@ For each signal, return a structured entry:
 - Signal: <one-line description>
 - Source: <URL>
 - Signal type: funding | hiring | price | regulatory | tool-gap | skill-shortage
-- Structural or hype?: <one sentence — is this driven by structural change
+- Structural or hype?: <one sentence â€” is this driven by structural change
   (regulation, tech inflection, demographic) or by narrative/hype?>
 - Confidence: high | medium | low (based on corroboration)
 
 Do NOT filter. Do NOT evaluate business viability. Just enumerate raw signals.
-Include weak signals — they reveal adjacencies.
+Include weak signals â€” they reveal adjacencies.
 
 Spend max 8 web searches. Stop early if signals start repeating.
 
@@ -39,7 +39,7 @@ Constraints:
 
 Return: a markdown list of 5-8 signals in the format above.
 
-Your Task ID is [X-a]. Read /home/z/my-project/worklog.md before starting
+Your Task ID is [X-a]. Read ${SKILL_ROOT}/worklog.md before starting
 (may not exist). Append your work record after finishing using the standard
 template.
 ```
@@ -58,7 +58,7 @@ For each signal, return:
 - Repo URL: <full GitHub URL>
 - Signal type: rapid-growth | feature-request | maintainer-frustration |
   integration-gap | underserved-tooling | niche-tool-emerging
-- Evidence: <stars count, growth rate, issue count with 👍, exact quote from
+- Evidence: <stars count, growth rate, issue count with ðŸ‘, exact quote from
   README/issue if relevant>
 - What it implies: <one sentence about what this signals for opportunity>
 
@@ -69,14 +69,14 @@ and search GitHub issues. Spend max 8 queries.
 
 Extract specifically:
 - Repos with rapid star growth (>100 stars in last 6 months in a niche)
-- Issues labeled "feature request" or "enhancement" with >10 👍
+- Issues labeled "feature request" or "enhancement" with >10 ðŸ‘
 - READMEs that say "missing", "no good tool for", "workaround"
 - Comparison tables in READMEs that list alternatives
 - Recent forks with significant divergence
 
 Return: a markdown list of 5-8 signals in the format above.
 
-Your Task ID is [X-b]. Read /home/z/my-project/worklog.md before starting.
+Your Task ID is [X-b]. Read \/worklog.md before starting.
 Append your work record after finishing.
 ```
 
@@ -93,9 +93,9 @@ For each paper, return:
 - Paper title and authors
 - Arxiv URL
 - Published date
-- What it describes: <one paragraph — new capability, quantified problem,
+- What it describes: <one paragraph â€” new capability, quantified problem,
   survey of industry challenges, benchmark>
-- Commercial implication: <one sentence — does this create a market, validate
+- Commercial implication: <one sentence â€” does this create a market, validate
   demand, or shift cost structure?>
 - Citation velocity: <slow / moderate / fast> if you can tell
 
@@ -109,11 +109,11 @@ Extract specifically:
 - Papers describing new capabilities (these create markets)
 - Papers quantifying a problem (cite the numbers)
 - Papers surveying industry challenges (validate demand)
-- Author affiliations (corporate vs academic — corporate = investment signal)
+- Author affiliations (corporate vs academic â€” corporate = investment signal)
 
 Return: a markdown list of 5-8 papers in the format above.
 
-Your Task ID is [X-c]. Read /home/z/my-project/worklog.md before starting.
+Your Task ID is [X-c]. Read \/worklog.md before starting.
 Append your work record after finishing.
 ```
 
@@ -132,13 +132,13 @@ For each signal, return:
 - Signal type: funding-round | vc-thesis | acquisition | ipo | anti-signal |
   fund-returning-bet
 - Specifics: <dollar amount, firm, company, date>
-- What it implies: <one sentence — validation, crowding risk, exit path,
+- What it implies: <one sentence â€” validation, crowding risk, exit path,
   ignored space, or power-law narrative>
 
 Distinguish between:
 - Funding rounds (capital validation)
 - VC thesis pages (where smart money says it's hunting)
-- Anti-signals (spaces VCs are explicitly ignoring — often bootstrapped-profitable)
+- Anti-signals (spaces VCs are explicitly ignoring â€” often bootstrapped-profitable)
 - Fund-returning bets (where VCs publicly identify their power-law tail)
 
 Spend max 8 web searches. Use Crunchbase, Pitchbook summaries, VC blog posts,
@@ -151,7 +151,7 @@ Warning to flag in your return:
 
 Return: a markdown list of 5-8 signals in the format above.
 
-Your Task ID is [X-d]. Read /home/z/my-project/worklog.md before starting.
+Your Task ID is [X-d]. Read \/worklog.md before starting.
 Append your work record after finishing.
 ```
 
@@ -169,7 +169,7 @@ For each signal, return:
 - Platform: reddit | hackernews | trustpilot | g2 | capterra | niche-forum
 - Frequency: one-off | recurring | weekly-pattern | daily-pattern
   (How often does this complaint type appear?)
-- Workaround mentioned?: <yes/no — if yes, what is it?>
+- Workaround mentioned?: <yes/no â€” if yes, what is it?>
 - Willingness-to-pay signal?: <"I'd pay for X" / "I pay $Y for [bad solution]"
   / none>
 
@@ -182,7 +182,7 @@ Extract specifically:
 - Exact verbatim quotes (paraphrasing loses signal)
 - Frequency signals (search the same complaint type multiple times to verify)
 - Workarounds (people using hacks/duct-tape = high-confidence demand)
-- "I pay $X for..." statements (highest confidence — validated spend)
+- "I pay $X for..." statements (highest confidence â€” validated spend)
 
 Bias warning to apply: Reddit complaints are amplified. Distinguish between
 "annoying" and "will pay." If 100 people complain but 0 pay, that's a
@@ -190,7 +190,7 @@ different signal than 10 people complaining and 5 paying $500/mo.
 
 Return: a markdown list of 5-8 pain signals in the format above.
 
-Your Task ID is [X-e]. Read /home/z/my-project/worklog.md before starting.
+Your Task ID is [X-e]. Read \/worklog.md before starting.
 Append your work record after finishing.
 ```
 
@@ -210,7 +210,7 @@ For each signal, return:
 - Counter-evidence: <what would argue against this score?>
 
 Then:
-- Run the veto check (Signals 1, 2, 10 must be ≥1)
+- Run the veto check (Signals 1, 2, 10 must be â‰¥1)
 - Compute total score /20
 - Assign Tier: 1 (Moonshot, 14-20) / 2 (Scalable Linear, 8-13) / 3 (Linear, 0-7)
 - Scan for anti-patterns (10 listed in Lens 07). Flag any that apply.
@@ -224,7 +224,7 @@ each signal scored 2.
 
 Return: the full Lens 07 output template (see references/lenses/07-exponential-potential.md).
 
-Your Task ID is [X-f]. Read /home/z/my-project/worklog.md before starting.
+Your Task ID is [X-f]. Read \/worklog.md before starting.
 Append your work record after finishing.
 ```
 
@@ -235,7 +235,7 @@ Append your work record after finishing.
 After all sub-agents return, the parent agent:
 
 1. **Deduplicates** signals that appear across multiple sub-agents (these are
-   higher confidence — cross-source validation).
+   higher confidence â€” cross-source validation).
 2. **Tags each signal** with the lens it informs (01-signal-scan, 02-demand-gap,
    03-arbitrage, etc.).
 3. **Runs ECR expansion**: combine all signals into a 15-20+ candidate pool.
@@ -249,3 +249,4 @@ After all sub-agents return, the parent agent:
 
 The parent agent does NOT re-do the sub-agent research. Synthesis is the
 parent's job; enumeration is the sub-agents' job.
+

@@ -1,10 +1,9 @@
 # Operator Wisdom — Research Database
-
-> Source research for the **operator-wisdom** framework in the business-mindset skill.
-> Goal: extract the actual operating principles (with quotes, decisions, sources) of humanity's greatest business operators, then distill cross-cutting patterns, anti-patterns, decision-making heuristics, and a synthesis of what the top 1% do differently.
-> Method: 49 distinct web searches across 27 named operators plus 22 deep-dive searches on specific decisions, anti-patterns, OKR origins, decision frameworks, and cross-operator synthesis. Raw JSON results saved in `/home/z/my-project/scripts/research/operator-wisdom/`.
-
----
+ 
+ > Source research for the **operator-wisdom** framework in the business-mindset skill.
+ > Goal: extract the actual operating principles (with quotes, decisions, sources) of humanity's greatest business operators, then distill cross-cutting patterns, anti-patterns, decision-making heuristics, and a synthesis of what the top 1% do differently.
+ > Method: 49 distinct web searches across 27 named operators plus 22 deep-dive searches on specific decisions, anti-patterns, OKR origins, decision frameworks, and cross-operator synthesis. Raw JSON results saved in `${SKILL_ROOT}/scripts/research/operator-wisdom/`.
+ ---
 
 ## PART 1 — The Operator Wisdom Database
 
@@ -1328,7 +1327,7 @@ Great operators share patterns in *how* they decide — distinct from *what* the
 ## Appendix: Research Methodology
 
 - **49 distinct web searches** executed across all 27 named operators (27 base searches, one per operator) plus 22 follow-up deep-dives on specific decisions, anti-patterns, OKR origins, decision frameworks, and cross-operator synthesis topics.
-- Raw JSON results saved in `/home/z/my-project/scripts/research/operator-wisdom/01_musk.json` through `49_horowitz_wartime.json`.
+- Raw JSON results saved in `${SKILL_ROOT}/scripts/research/operator-wisdom/01_musk.json` through `49_horowitz_wartime.json`.
 - Search engine: z-ai-web-dev-sdk `web_search` function via CLI (`z-ai function -n web_search -a '{...}' -o file.json`).
 - Operator selection criteria: (1) historically significant enough to have multiple biographies/essays; (2) actual operator (ran a business) vs. pure thinker; (3) accessible primary or near-primary quotes.
 - Quote verification: each quote attributed to a verifiable source (book, essay, shareholder letter, interview transcript). Where possible, multiple sources cited for the same quote.

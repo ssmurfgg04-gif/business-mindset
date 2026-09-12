@@ -345,7 +345,7 @@ Can the financials be verified, or is this pitch-deck-convexity only?
 
 ## Source
 
-Distilled from `/home/z/my-project/business-mindset/references/exponential-research.md`,
+Distilled from `${SKILL_ROOT}/references/exponential-research.md`,
 which contains the full 14-signal framework, 70-source bibliography, and 11
 scored company examples (Stripe, NVIDIA, Notion, Uber, Bitcoin, Facebook,
 Quibi, WeWork, Theranos, MoviePass, Blue Apron).

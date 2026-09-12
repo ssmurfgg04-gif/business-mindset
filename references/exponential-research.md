@@ -584,9 +584,9 @@ For reflexive opportunities, the same loop that drove the boom drives the bust. 
 - TechCrunch — Stripe unveils AI foundation model for payments: https://techcrunch.com/2025/05/07/stripe-unveils-ai-foundation-model-for-payments-reveals-deeper-partnership-with-nvidia
 
 ---
-
-## Appendix — How This Research Was Conducted
-
-18 distinct web searches were executed using the z-ai `web_search` function across the 12 mandated topic areas plus 6 follow-up searches for depth on specific gaps (NFX 13-types detail, Crossing the Chasm, WeWork failure analysis, Andreessen power-law specifics). Raw search result JSON files are stored at `/home/z/my-project/scripts/research/` (files `01_*.json` through `18_*.json`) for audit and re-use.
-
-The synthesis was then iterated against the existing lens files (`lenses-01` through `lenses-06`) in `/home/z/my-project/scripts/` to ensure consistency of tone, level of concreteness, and checkability. The output is intentionally not academic: every signal has a test, every anti-pattern has a real example, and every score is computable from public information about the opportunity.
+ 
+ ## Appendix — How This Research Was Conducted
+ 
+ 18 distinct web searches were executed using the z-ai `web_search` function across the 12 mandated topic areas plus 6 follow-up searches for depth on specific gaps (NFX 13-types detail, Crossing the Chasm, WeWork failure analysis, Andreessen power-law specifics). Raw search result JSON files are stored at `${SKILL_ROOT}/scripts/research/` (files `01_*.json` through `18_*.json`) for audit and re-use.
+ 
+ The synthesis was then iterated against the existing lens files (`lenses-01` through `lenses-06`) in `${SKILL_ROOT}/scripts/` to ensure consistency of tone, level of concreteness, and checkability. The output is intentionally not academic: every signal has a test, every anti-pattern has a real example, and every score is computable from public information about the opportunity.

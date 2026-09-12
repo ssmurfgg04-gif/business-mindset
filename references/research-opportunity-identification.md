@@ -1,10 +1,9 @@
 # Opportunity Identification — Practitioner Research Synthesis
-
-**Task ID:** 1-A
-**Purpose:** Source material for teaching an AI business-cognition engine how to FIND opportunities. Every signal here is checkable, every principle actionable, every example real and sourced.
-**Method:** 45 web searches across Reddit, Hacker News, IndieHackers, founder blogs, and named-practitioner essays (Paul Graham, Patrick McKenzie, Peter Thiel, Marc Andreessen, Naval Ravikant, Ben Thompson, Byrne Hobart, Bill Gurley, Tyler Cowen, Hamilton Helmer, Rob Fitzpatrick, Justin Jackson). Raw search JSONs in `/home/z/my-project/scripts/research-task1a/`.
-
----
+ 
+ **Task ID:** 1-A
+ **Purpose:** Source material for teaching an AI business-cognition engine how to FIND opportunities. Every signal here is checkable, every principle actionable, every example real and sourced.
+ **Method:** 45 web searches across Reddit, Hacker News, IndieHackers, founder blogs, and named-practitioner essays (Paul Graham, Patrick McKenzie, Peter Thiel, Marc Andreessen, Naval Ravikant, Ben Thompson, Byrne Hobart, Bill Gurley, Tyler Cowen, Hamilton Helmer, Rob Fitzpatrick, Justin Jackson). Raw search JSONs in `${SKILL_ROOT}/scripts/research-task1a/`.
+ ---
 
 ## PART 1 — 25 Concrete Opportunity-Identification Signals
 
@@ -650,7 +649,7 @@ All sources used in this synthesis, organized by category.
 
 - **Search tool:** z-ai-web-dev-sdk `web_search` function via CLI.
 - **Total distinct searches:** 45 (well above the 25-30 minimum).
-- **Raw JSON files:** Saved in `/home/z/my-project/scripts/research-task1a/01_*.json` through `45_*.json` for audit and re-use.
+- **Raw JSON files:** Saved in `${SKILL_ROOT}/scripts/research-task1a/01_*.json` through `45_*.json` for audit and re-use.
 - **Search categories:** Reddit (8), Hacker News (3), Patrick McKenzie (3), Paul Graham (2), Peter Thiel (2), Andreessen (2), Naval (1), Stratechery (1), Byrne Hobart (2), Bill Gurley (2), Tyler Cowen (1), Mom Test (1), IndieHackers (1), Justin Jackson (1), boring businesses (1), trend signals (2), anti-patterns (1), arbitrage (1), embarrassing (1), Helmer (1), Stripe (1), startup postmortems (1), YC user research (1), niche SaaS (1), fake door (1), pmarchive (1).
 - **Synthesis method:** Each signal extracted from at least one specific source URL with verifiable claim. Real examples verified via search snippets. Counter-examples constructed to be the *closest possible false positive* — the pattern that looks like signal but isn't.
 - **Audience:** AI business-cognition engine. Every signal is operationalized to a testable predicate. Every principle is attributed. Every anti-pattern has a defense.
