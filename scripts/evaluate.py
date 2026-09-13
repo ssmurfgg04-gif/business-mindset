@@ -5,8 +5,8 @@ Tests opportunity evaluation metrics against the 6-pillar framework:
 Systemic Edge = (C * R * S * O * A) / (1 + F)
 """
 
-import json
 import sys
+
 
 def calculate_edge(convexity, reflexivity, structural_edge, optionality, asymmetry, friction):
     """
@@ -20,9 +20,10 @@ def calculate_edge(convexity, reflexivity, structural_edge, optionality, asymmet
     passed = (score >= 8.0) and (asymmetry >= 1) and (friction <= 1)
     return score, passed
 
+
 def main():
     print("=== Business Mindset Calibration Test Runner ===")
-    
+
     # Test sample simulation cases
     test_cases = [
         {"name": "High-Arb SaaS Play", "C": 2, "R": 2, "S": 2, "O": 2, "A": 2, "F": 0},
@@ -47,6 +48,7 @@ def main():
     else:
         print("\n[FAILURE] Calibration test expectations violated.")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

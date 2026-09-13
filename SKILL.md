@@ -73,7 +73,7 @@ Do not load all files at once. Match mode to intent and load companion files on 
 6. **Verdict-Consistency Law** (`references/frameworks/novelty-gate.md`): the final verdict must agree with the lowest flow/threading gate. If pillar score <8, base rate <15%, or a novelty veto fired — no Tier 1 / Moonshot / PASS language is allowed; default to the lower tier when in doubt. Never output confidence > 35% without calibration evidence. A "Tier 1 Moonshot" next to a 4/32 pillar score is verdict leakage and must be corrected.
 7. **Single Next Action**: Provide ONE physical next step (<2 hours) that tests the riskiest assumption.
 8. **Messaging Hook** (`references/frameworks/marketing-wisdom.md`, optional for Standard, expected for Deep Dive): state the open loop, the raw visual to open on, the single emotional value, and the product-as-story angle.
-9. **Decision Journal & Ledger**: Record prediction in `~/.local/state/opencode/business-mindset-decisions.jsonl` and positions in `~/.local/state/opencode/business-mindset-ledger.jsonl`.
+9. **Decision Journal & Ledger**: Record prediction in the decisions journal and positions in the ledger (JSONL, one entry per decision). Resolve the state directory per OS — Linux/macOS: `~/.local/state/opencode/`; Windows: `%LOCALAPPDATA%/opencode/`; filenames `business-mindset-decisions.jsonl` and `business-mindset-ledger.jsonl`. If the directory is not writable, fall back to `./.opencode/` in the project root and note the location in the brief.
 
 ## Token Efficiency & Output Discipline
 - Avoid verbose walls of conversational text. Output structured markdown briefs and JSON records.
@@ -107,7 +107,7 @@ Every Opportunity Brief MUST include:
 ## Mode
 [Quick Check / Standard / Deep Dive]
 
-## Time Horizon
+## Time Horizon (Standard/Deep Dive only — omit in Quick Check)
 - Validation: [timeframe]
 - First revenue: [timeframe]
 - Exit horizon: [timeframe]

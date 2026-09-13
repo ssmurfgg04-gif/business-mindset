@@ -383,8 +383,11 @@ Actual outcome: [success / failure / ongoing / abandoned]
 What was wrong about the analysis: [what the audit missed]
 ```
 
-Store in `~/.local/state/opencode/business-mindset-outcomes.jsonl`
-One JSONL entry per review. Future sessions read this to calibrate confidence
+Store in the outcomes journal (one JSONL entry per review; resolve the
+state directory per OS — Linux/macOS: `~/.local/state/opencode/`,
+Windows: `%LOCALAPPDATA%/opencode/`, filename
+`business-mindset-outcomes.jsonl`; fall back to `./.opencode/` if not
+writable). Future sessions read this to calibrate confidence
 (see SKILL.md "Outcomes Feedback Loop" section).
 ```
 

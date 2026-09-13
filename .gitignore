@@ -2,6 +2,13 @@
 ~/.local/state/opencode/
 *.jsonl
 
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
 # OS
 .DS_Store
 Thumbs.db

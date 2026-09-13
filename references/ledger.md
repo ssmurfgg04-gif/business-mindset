@@ -115,8 +115,13 @@ For trades:
 ## Shell Commands
 
 ```bash
-# File location
-LEDGER="$HOME/.local/state/opencode/business-mindset-ledger.jsonl"
+# File location (Linux/macOS ~/.local/state/opencode/,
+# Windows %LOCALAPPDATA%/opencode/)
+if [ -n "$LOCALAPPDATA" ]; then STATE_DIR="$LOCALAPPDATA/opencode";
+else STATE_DIR="$HOME/.local/state/opencode"; fi
+LEDGER="$STATE_DIR/business-mindset-ledger.jsonl"
+# PowerShell equivalent:
+# $LEDGER = "$env:LOCALAPPDATA/opencode/business-mindset-ledger.jsonl"
 mkdir -p "$(dirname "$LEDGER")"
 touch "$LEDGER"
 

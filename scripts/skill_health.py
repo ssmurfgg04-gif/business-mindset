@@ -4,12 +4,11 @@ Business Mindset Skill — Health Diagnostic
 Validates skill integrity, structure, and references.
 Run: python scripts/skill_health.py
 """
+
 import json
-import os
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 SKILL_ROOT = Path(__file__).parent.parent
 SKILL_MD = SKILL_ROOT / "SKILL.md"
@@ -19,11 +18,11 @@ SCHEMAS = SKILL_ROOT / "schemas"
 SCRIPTS = SKILL_ROOT / "scripts"
 EXAMPLES = SKILL_ROOT / "examples"
 
-ISSUES: List[str] = []
-WARNINGS: List[str] = []
+ISSUES: list[str] = []
+WARNINGS: list[str] = []
 
 
-def check_frontmatter() -> Dict:
+def check_frontmatter() -> dict:
     """Validate SKILL.md frontmatter has required fields."""
     content = SKILL_MD.read_text(encoding="utf-8")
     if not content.startswith("---"):
@@ -39,7 +38,6 @@ def check_frontmatter() -> Dict:
 
     required = ["name", "version", "description", "license", "compatibility"]
     recommended = ["author", "repository", "tags", "metadata"]
-    optional = ["negative_trigger"]
 
     data = {}
     for line in fm_text.splitlines():
@@ -63,7 +61,7 @@ def check_references_exist() -> int:
     """Verify all referenced files in SKILL.md exist."""
     content = SKILL_MD.read_text(encoding="utf-8")
     # Find all references/... patterns
-    refs = re.findall(r'[`\(](references/[^`\)]+)\.md', content)
+    refs = re.findall(r"[`\(](references/[^`\)]+)\.md", content)
     missing = 0
     for ref in set(refs):
         path = SKILL_ROOT / f"{ref}.md"
@@ -108,9 +106,9 @@ def check_secrets_leak() -> int:
     count = 0
     patterns = [
         r"ghp_[A-Za-z0-9]{36,}",  # GitHub PAT
-        r"sk-[A-Za-z0-9]{48,}",   # OpenAI API key
+        r"sk-[A-Za-z0-9]{48,}",  # OpenAI API key
         r"sk-ant-[A-Za-z0-9]{95,}",  # Anthropic API key
-        r"AKIA[A-Z0-9]{16}",      # AWS access key
+        r"AKIA[A-Z0-9]{16}",  # AWS access key
     ]
     for md_file in SKILL_ROOT.rglob("*.md"):
         content = md_file.read_text(encoding="utf-8")
@@ -133,13 +131,13 @@ def check_placeholder_paths() -> int:
     for md_file in REFERENCES.rglob("*.md"):
         content = md_file.read_text(encoding="utf-8")
         if "/home/z/" in content:
-            lines = [i+1 for i, line in enumerate(content.splitlines()) if "/home/z/" in line]
+            lines = [i + 1 for i, line in enumerate(content.splitlines()) if "/home/z/" in line]
             WARNINGS.append(f"Hardcoded /home/z/ path in {md_file.name} at lines {lines}")
             count += 1
     return count
 
 
-def check_skill_md_structure() -> List[str]:
+def check_skill_md_structure() -> list[str]:
     """Verify SKILL.md has expected sections."""
     content = SKILL_MD.read_text(encoding="utf-8")
     required_sections = [
@@ -184,7 +182,9 @@ def main():
 
     # Run all checks
     fm = check_frontmatter()
-    print(f"\n[OK] Frontmatter: {len([k for k in ['name','version','description','license','compatibility'] if k in fm])}/5 required fields present")
+    print(
+        f"\n[OK] Frontmatter: {len([k for k in ['name', 'version', 'description', 'license', 'compatibility'] if k in fm])}/5 required fields present"
+    )
     for w in [w for w in WARNINGS if w.startswith("Missing recommended")]:
         print(f"  [WARN] {w}")
 
@@ -207,7 +207,7 @@ def main():
     if missing_sections:
         print(f"\n[FAIL] SKILL.md missing sections: {missing_sections}")
     else:
-        print(f"\n[OK] SKILL.md structure: OK")
+        print("\n[OK] SKILL.md structure: OK")
 
     readme_ok = check_readme_sync()
     print(f"\n[OK] README sync: {'OK' if readme_ok else 'WARNING'}")

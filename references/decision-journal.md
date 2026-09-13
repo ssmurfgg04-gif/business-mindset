@@ -172,7 +172,13 @@ Append-only. Use `jq` for analysis.
 ## Analysis Commands
 
 ```bash
-DECISIONS="$HOME/.local/state/opencode/business-mindset-decisions.jsonl"
+# State dir per OS: Linux/macOS ~/.local/state/opencode/,
+# Windows %LOCALAPPDATA%/opencode/ (PowerShell: $env:LOCALAPPDATA).
+if [ -n "$LOCALAPPDATA" ]; then STATE_DIR="$LOCALAPPDATA/opencode";
+else STATE_DIR="$HOME/.local/state/opencode"; fi
+DECISIONS="$STATE_DIR/business-mindset-decisions.jsonl"
+# PowerShell equivalent:
+# $DECISIONS = "$env:LOCALAPPDATA/opencode/business-mindset-decisions.jsonl"
 
 # Count decisions by verdict
 jq -s 'group_by(.skill_verdict) | map({verdict: .[0].skill_verdict, count: length})' "$DECISIONS"
